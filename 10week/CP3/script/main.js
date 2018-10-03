@@ -15,6 +15,20 @@ let particleGun = {
 
 let actual_JSON = null;
 
+let xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      actual_JSON = JSON.parse(this.responseText);
+    }
+};
+xmlhttp.open("GET", "./data/files.json", true);
+xmlhttp.send();
+
+
+
+
+
+
 let electricityValue = [20,18,14,12,13,17,20,23,24,26,31,32,33,35,37,36,34,33,30,30,36,34,25,21];
 //price per MWH for electricty per hour
 
@@ -45,7 +59,13 @@ let smarts = 60001;
 let smartsTimer = null 
 let intelegence = 0;
 
+
+
+
+
+
 $(function() {
+  alert(actual_JSON.button);
 
   setInterval(timeOfDay,500);
   //initilize clock function
