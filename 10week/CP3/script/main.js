@@ -1,3 +1,5 @@
+"use strict";
+
 let particleGun = {
   beam:1, 
   //sets the beam mutplier. This should be a constructor instead
